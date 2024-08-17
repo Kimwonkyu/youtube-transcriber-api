@@ -31,3 +31,8 @@ app.register_error_handler(TranscriptionError, TranscriptionError)
 @app.errorhandler(TranscriptionError)
 def handle_exception(e):
     return jsonify(message=e.description), e.code
+
+# Add this block to actually run the application
+if __name__ == "__main__":
+    print("Starting Flask application...")
+    app.run(host="0.0.0.0", port=5030, debug=True)
